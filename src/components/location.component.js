@@ -1,10 +1,6 @@
 
-class Animal {
-  constructor(name) {
-    this.name = name
-  }
-
-  sayMyName() {
-    console.log(`My name is: ${this.name}`)
+class LocationComponent {
+  constructor(el) {
+    this.el = el
   }
 }

@@ -1,15 +1,16 @@
 
 class LocationService {
   constructor(url, options) {
-
+    this.url = url
+    this.options = options || {}
   }
 
   getLocations() {
-    this.fetchData()
+    return this.fetchData(this.url, this.options)
   }
 
-  fetchData(url, options, callback, errCallback) {
-    fetch(url, options)
+  fetchData(url, options) {
+    return fetch(url, options)
       .then(response => {
         if(response.ok) {
           return Promise.resolve(response)
@@ -18,8 +19,6 @@ class LocationService {
         }
       })
       .then(response => response.json())
-      .then(json => callback && callback(json))
-      .catch(error => { errCallback && errCallback(error) || console.log(`Request failed: ${error.message}`) })
   }
 
 }

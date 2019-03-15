@@ -9,7 +9,7 @@ class App {
 
     let service = new LocationService(locationsUrl)
     let locations = service.getLocations()
-    locations.then( json => { debugger } )
+    locations.then( locations => { debugger // TODO: start locations component } )
              .catch(error => console.log(`Locations request failed: ${error.message}`))
 
   }

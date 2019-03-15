@@ -1,11 +1,10 @@
-[
-  {
+[{
     "locationID": 123345,
     "name": "Queretaro",
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -24,7 +23,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -43,7 +42,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -62,7 +61,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -81,7 +80,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -100,7 +99,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -119,7 +118,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -138,7 +137,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -157,7 +156,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -176,7 +175,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -195,7 +194,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -214,7 +213,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"
@@ -233,7 +232,7 @@
     "city": {
       "name": "Santiago de Queretaro",
       "lat": "20.58806",
-      "long" "-100.38806"
+      "long": "-100.38806"
     },
     "state": {
       "name": "Queretaro"

@@ -1,17 +1,16 @@
 'use strict';
 
-class LocationService {
-  constructor(url = this.isParamMissing`url`, options = {}) {
+export default class LocationService {
+  constructor(url = this.isRequired`url`, options = {}) {
     this.url = url
     this.options = options
   }
 
-// TODO: debug forEach
   getLocations() {
     let tempLocations = this.fetchData(this.url, this.options)
     let locations = []
     return tempLocations.then(json => {
-      json.forEach(index, location => {
+      json.forEach((location, index) => {
         locations.push(new LocationModel(location))
       })
       return Promise.resolve(locations)
@@ -30,7 +29,7 @@ class LocationService {
       .then(response => response.json())
   }
 
-  isParamMissing(param) {
+  isRequired(param) {
     throw new Error(`${param} is required.`)
   }
 
@@ -43,7 +42,7 @@ class LocationModel {
     this.city = location.city.name
     this.country = location.country.name
     this.countryAbb = location.country.abbreviation
-    this.name = this.createName(this.city, this.country)
+    this.locationName = this.createName(this.city, this.country)
     this.countryFlag = this.getFlagID(location)
   }
 
@@ -54,7 +53,7 @@ class LocationModel {
 
 // TODO: build logic to get the flagID to match icon flag key
   getFlagID(location) {
-    debugger
+    return 'XXX'
   }
 
 }

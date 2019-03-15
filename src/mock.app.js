@@ -1,16 +1,17 @@
 'use strict';
+import LocationService from './components/location.service.js';
 
-class App {
+export default class App {
   constructor(el) {
     this.el = el
   }
 
   init() {
-    const locationsUrl = `https://jsonplaceholder.typicode.com/users` // test url
+    const locationsUrl = `http://localhost:3000/locations` // test url
 
     let service = new LocationService(locationsUrl)
     let locations = service.getLocations()
-    locations.then( locations => { debugger // TODO: start locations component } )
+    locations.then( locations => { debugger } )
              .catch(error => console.log(`Locations request failed: ${error.message}`))
 
   }

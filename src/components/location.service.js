@@ -1,3 +1,4 @@
+'use strict';
 
 class LocationService {
   constructor(url = this.isParamMissing`url`, options = {}) {

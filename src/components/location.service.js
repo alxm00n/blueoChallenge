@@ -57,3 +57,20 @@ class LocationModel {
   }
 
 }
+
+class LocationsCollection {
+  constructor(array = this.isRequired`array`) {
+    // this.collection = typeOf(array) == 'array' ? array : throw new Error(`LocationsCollection: Invalid Type - ${array}`)
+  }
+
+  sortAlphabetically(arr) {
+    arr.sort((a, b) => {
+      return a.name < b.name ? -1
+           : a.name > b.name ? 1
+           : 0 })
+  }
+
+  isRequired(param) {
+    throw new Error(`${param} is required.`)
+  }
+}

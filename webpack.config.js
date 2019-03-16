@@ -1,11 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.js',
   module: {
     rules: [{
-      test: /\.m?js$/,
+      test: /\.(js|jsx)$/,
       exclude: /(node_modules|bower_components)/,
       include: [
         path.resolve(__dirname, 'src'),
@@ -13,7 +12,10 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env']
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react'
+          ]
         }
       }
     }]

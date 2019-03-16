@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "graph": "git log --all --decorate --oneline --graph",
+    "dev": "webpack --mode=development --debug --progress",
+    "build": "webpack --mode=production --progress",
     "serve": "babel-node ./src/backend/server.js",
-    "serveJson": "json-server --watch --delay 2000 ./src/backend/db.json"
+    "serveJSON": "json-server --watch --delay 2000 ./src/backend/db.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alxm00n/blueoChallenge.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "alxm00n",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alxm00n/blueoChallenge/issues"
@@ -25,9 +27,15 @@
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "emotion": "^10.0.9",
     "json-server": "^0.14.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }

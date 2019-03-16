@@ -1,9 +1,9 @@
 'use strict';
 import App from './mock.app.js';
 
-var el = document.getElementById('app')
-document.addEventListener('DOMContentLoaded', (el) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   debugger
+  var el = document.getElementById('app')
   let app = new App(el)
   app.init()
 })

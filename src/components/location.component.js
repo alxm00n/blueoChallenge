@@ -5,12 +5,31 @@ import LocationsList from './locationlist.component.js'
 import FilterBox from './controls.component.js'
 
 export default class LocationComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      filterString: ''
+    }
+    this.handlerFilterStringChange = this.handlerFilterStringChange.bind(this)
+  }
+
+  handlerFilterStringChange(filterString) {
+    this.setState({
+      filterString: filterString
+    })
+  }
+
   render() {
-    let locations = this.props.locations
     return (
       <React.Fragment>
-        <FilterBox />
-        <LocationsList locations={locations} />
+        <FilterBox
+          filterString={this.state.filterString}
+          onFilterStringChange={this.handlerFilterStringChange}
+        />
+        <LocationsList
+          locations={this.props.locations}
+          filterString={this.state.filterString}
+        />
       </React.Fragment>
     )
   }

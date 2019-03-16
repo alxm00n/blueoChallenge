@@ -4,21 +4,23 @@ import ReactDOM from 'react-dom';
 
 class Location extends React.Component {
   render() {
-    debugger
-    const name = this.props.name
     return (
-      <li>{name}</li>
+      <li>{this.props.name}</li>
     )
   }
 }
 
 export default class LocationsList extends React.Component {
   render() {
+    const filterString = this.props.filterString
+
     let locations = []
     this.props.locations.forEach((location, index) => {
+      if(location.locationName.indexOf(filterString) === -1) {
+        return;
+      }
       locations.push(<Location key={index*2} name={location.locationName} />)
     })
-    debugger
     return (
       <ul>{locations}</ul>
     )

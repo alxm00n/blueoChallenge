@@ -1,4 +1,6 @@
 'use strict';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import LocationService from './components/location.service.js';
 import LocationComponent from './components/location.component.js'
 
@@ -12,13 +14,15 @@ export default class App {
 
     let service = new LocationService(LOCATIONS_URL)
     let locations = service.getLocations()
-    locations.then( locations => { this.startLocationComponent(this.el, locations) } )
+    locations.then( data => { this.startLocationComponent(data) } )
              .catch(error => console.log(`Locations request failed: ${error.message}`))
 
   }
 
-  startLocationComponent(el, data) {
-    let locationsComp = new LocationComponent(el, data)
+  startLocationComponent(data) {
+    ReactDOM.render(
+      <LocationComponent locations={data} />
+    ,this.el)
   }
 
 }

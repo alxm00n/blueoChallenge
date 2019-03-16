@@ -8,11 +8,12 @@ export default class LocationService {
 
   getLocations() {
     let tempLocations = this.fetchData(this.url, this.options)
-    let locations = []
+    let locations = new LocationsCollection()
     return tempLocations.then(json => {
       json.forEach((location, index) => {
         locations.push(new LocationModel(location))
       })
+      locations.sortAlphabeticallyBy('locationName')
       return Promise.resolve(locations)
     })
   }
@@ -35,20 +36,14 @@ export default class LocationService {
 
 }
 
-// TODO: check object nested properties exist
 class LocationModel {
-  constructor(location) {
-    this.locationID = location.locationID
-    this.city = location.city.name
-    this.country = location.country.name
-    this.countryAbb = location.country.abbreviation
-    this.locationName = this.createName(this.city, this.country)
-    this.countryFlag = this.getFlagID(location)
-  }
-
-// TODO: update checks for undefined properties '-' and 'Not Provided'
-  createName(city = 'Not Provided', country = '') {
-    return `${city}-${country}`
+  constructor({ locationID, city: { name: city }, country: { name: country, abbreviation: abbr } }) {
+    this.locationID = locationID
+    this.city = city ? city : 'Not Provided'
+    this.country = country ? country : null
+    this.countryAbb = abbr ? abbr : null
+    this.locationName = country ? `${this.city}-${country}` : `${this.city}`
+    this.countryFlag = this.getFlagID(abbr)
   }
 
 // TODO: build logic to get the flagID to match icon flag key
@@ -58,15 +53,15 @@ class LocationModel {
 
 }
 
-class LocationsCollection {
-  constructor(array = this.isRequired`array`) {
-    // this.collection = typeOf(array) == 'array' ? array : throw new Error(`LocationsCollection: Invalid Type - ${array}`)
+class LocationsCollection extends Array {
+  constructor() {
+    super()
   }
 
-  sortAlphabetically(arr) {
-    arr.sort((a, b) => {
-      return a.name < b.name ? -1
-           : a.name > b.name ? 1
+  sortAlphabeticallyBy(key = this.isRequired`key`) {
+    this.sort((a, b) => {
+      return a[key] < b[key] ? -1
+           : a[key] > b[key] ? 1
            : 0 })
   }
 

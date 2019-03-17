@@ -1,4 +1,7 @@
 'use strict';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { css } from '@emotion/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -59,6 +62,14 @@ class LocationsList extends React.Component {
   constructor(props) {
     super(props)
     this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
+    this.style = this.buildStyle()
+  }
+
+  buildStyle() {
+    return css`
+      overflow-y: scroll;
+      height: 300px;
+    `
   }
 
   handlerCheckboxChange(e) {
@@ -80,7 +91,7 @@ class LocationsList extends React.Component {
                                />)
     })
     return (
-      <ul>{locations}</ul>
+      <ul css={this.style}>{locations}</ul>
     )
   }
 }

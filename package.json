@@ -34,6 +34,9 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
+    "babel-plugin-emotion": "^10.0.9",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   }

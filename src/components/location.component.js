@@ -1,4 +1,5 @@
 'use strict';
+import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { LocationsList, LocationsIndex } from './locationlist.component.js';
@@ -22,7 +23,6 @@ export default class LocationComponent extends React.Component {
   }
 
   handlerCheckboxChange(checked, id) {
-    debugger
     if(checked) {
       this.selectedLocations.push(id)
     } else {
@@ -32,8 +32,10 @@ export default class LocationComponent extends React.Component {
   }
 
   render() {
+    const Heading = styled.h1`font-size: 20px;`
     return (
       <React.Fragment>
+        <Heading>Locations</Heading>
         <FilterBox
           filterString={this.state.filterString}
           onFilterStringChange={this.handlerFilterStringChange}

@@ -11,12 +11,24 @@ export default class LocationComponent extends React.Component {
       filterString: ''
     }
     this.handlerFilterStringChange = this.handlerFilterStringChange.bind(this)
+    this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
+    this.selectedLocations = []
   }
 
   handlerFilterStringChange(filterString) {
     this.setState({
       filterString: filterString
     })
+  }
+
+  handlerCheckboxChange(checked, id) {
+    debugger
+    if(checked) {
+      this.selectedLocations.push(id)
+    } else {
+      this.selectedLocations = this.selectedLocations.filter( locationId => locationId !== id )
+    }
+    console.log(`Selected Locations: ${this.selectedLocations}`)
   }
 
   render() {
@@ -33,6 +45,7 @@ export default class LocationComponent extends React.Component {
         <LocationsList
           locations={this.props.locations}
           filterString={this.state.filterString}
+          onCheckboxChange={this.handlerCheckboxChange}
         />
       </React.Fragment>
     )

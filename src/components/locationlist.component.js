@@ -3,9 +3,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Location extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      selected: false
+    }
+    this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
+  }
+
+  handlerCheckboxChange(e) {
+    const value = e.target.checked
+    this.props.onCheckboxChange(e)
+    this.setState({
+      selected: value
+    })
+  }
+
   render() {
     return (
-      <li id={this.props.id}>{this.props.name}</li>
+      <React.Fragment>
+        <input type='checkbox'
+               id={this.props.id}
+               checked={this.state.selected}
+               onChange={this.handlerCheckboxChange}
+        />
+        <li>{this.props.name}</li>
+      </React.Fragment>
     )
   }
 }
@@ -33,6 +56,17 @@ class AlphaIndex extends React.Component {
 }
 
 class LocationsList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
+  }
+
+  handlerCheckboxChange(e) {
+    const checked = e.target.checked
+    const id = e.target.id
+    this.props.onCheckboxChange(checked, id)
+  }
+
   render() {
     const filterString = this.props.filterString
     let locations = []
@@ -42,6 +76,7 @@ class LocationsList extends React.Component {
       locations.push(<Location key={location.locationID}
                                id={location.locationID}
                                name={location.locationName}
+                               onCheckboxChange={this.handlerCheckboxChange}
                                />)
     })
     return (

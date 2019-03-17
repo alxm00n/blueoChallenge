@@ -1,8 +1,10 @@
 'use strict';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { LocationsList, LocationsIndex } from './locationlist.component.js';
+import { LocationsList, LocationsIndex } from './filterableList.component.js';
 import { TitleBar, FilterBox, ClearButton } from './controls.component.js';
 
 export default class LocationComponent extends React.Component {
@@ -14,6 +16,25 @@ export default class LocationComponent extends React.Component {
     this.handlerFilterStringChange = this.handlerFilterStringChange.bind(this)
     this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
     this.selectedLocations = []
+    this.style = this.buildStyle()
+    this.globalStyle = this.buildGlobalStyle()
+  }
+
+  buildGlobalStyle() {
+    return css`
+
+    `
+  }
+
+  buildStyle() {
+    return css`
+      position: absolute;
+      width: 21em;
+      height: 29em;
+      padding: 1.5em;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    `
   }
 
   handlerFilterStringChange(filterString) {
@@ -32,9 +53,11 @@ export default class LocationComponent extends React.Component {
   }
 
   render() {
-    const Heading = styled.h1`font-size: 20px;`
+    const Heading = styled.h1`font-size: 2em; margin: 0;`
+    const Divider = styled.hr`border-top: 1px solid #d2d2d2;`
     return (
-      <React.Fragment>
+      <div css={this.style}>
+        <Global styles={this.globalStyle} />
         <Heading>Locations</Heading>
         <FilterBox
           filterString={this.state.filterString}
@@ -49,7 +72,8 @@ export default class LocationComponent extends React.Component {
           filterString={this.state.filterString}
           onCheckboxChange={this.handlerCheckboxChange}
         />
-      </React.Fragment>
+        <Divider />
+      </div>
     )
   }
 
@@ -57,20 +81,3 @@ export default class LocationComponent extends React.Component {
     throw new Error(`${param} is required.`)
   }
 }
-
-// Component Breakdown
-// LocationComponent *state
-// '-- TitleBar
-// '-- FilterBox
-// '-- ClearButton
-// '-- LocationsList
-//     '-- Location
-//     '-- LocationsIndex
-
-// Data set
-// this.locationID
-// this.city
-// this.country
-// this.countryAbb
-// this.locationName
-// this.countryFlag

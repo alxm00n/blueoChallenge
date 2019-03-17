@@ -1,7 +1,6 @@
 'use strict';
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -21,19 +20,18 @@ class FilterBox extends React.Component {
 
   buildStyle() {
     return css`
-      border: 5px solid white;
+      width: 21.5em;
+      height: 3em;
+      border: none;
       -webkit-box-shadow:
-        inset 0 0 8px  rgba(0,0,0,0.1),
-              0 0 16px rgba(0,0,0,0.1);
+        inset 0px 4px 5px rgba(0,0,0,0.2);
       -moz-box-shadow:
-        inset 0 0 8px  rgba(0,0,0,0.1),
-              0 0 16px rgba(0,0,0,0.1);
+        inset 0px 4px 5px rgba(0,0,0,0.2);
       box-shadow:
-        inset 0 0 8px  rgba(0,0,0,0.1),
-              0 0 16px rgba(0,0,0,0.1);
-      padding: 15px;
-      background: rgba(255,255,255,0.5);
-      margin: 0 0 10px 0;
+        inset 0px 4px 5px rgba(0,0,0,0.2);
+      background-color: #ffffff;
+      margin: 1em 0;
+      padding-left: 3.5em;
     `
   }
 

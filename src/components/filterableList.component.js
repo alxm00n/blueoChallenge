@@ -1,7 +1,6 @@
 'use strict';
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -12,6 +11,13 @@ class Location extends React.Component {
       selected: false
     }
     this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
+    this.style = this.buildStyle()
+  }
+
+  buildStyle() {
+    return css`
+      display: inline-block;
+    `
   }
 
   handlerCheckboxChange(e) {
@@ -24,14 +30,15 @@ class Location extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <input type='checkbox'
                id={this.props.id}
                checked={this.state.selected}
                onChange={this.handlerCheckboxChange}
         />
-        <li>{this.props.name}</li>
-      </React.Fragment>
+        <li css={this.style}>{this.props.name}</li>
+        <br />
+      </>
     )
   }
 }
@@ -67,8 +74,12 @@ class LocationsList extends React.Component {
 
   buildStyle() {
     return css`
+      position: relative;
+      right: -3.5em;
+      height: 20em;
+      margin-left: -2.5em;
+      padding: 0;
       overflow-y: scroll;
-      height: 300px;
     `
   }
 
@@ -99,8 +110,20 @@ class LocationsList extends React.Component {
 class LocationsIndex extends React.Component {
   constructor(props) {
     super(props)
-
     this.handlerIndexClick = this.handlerIndexClick.bind(this)
+    this.style = this.buildStyle()
+  }
+
+  buildStyle() {
+    return css`
+      position: absolute;
+      right: 1.5em;
+      z-index: 99;
+      > a {
+        display: block;
+        cursor: pointer;
+      }
+    `
   }
 
   handlerIndexClick(elID) {
@@ -126,7 +149,7 @@ class LocationsIndex extends React.Component {
       }
     })
     return (
-      <p>{locationsIndex}</p>
+      <div css={this.style}>{locationsIndex}</div>
     )
   }
 }

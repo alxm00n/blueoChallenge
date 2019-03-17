@@ -26,3 +26,20 @@ export default class App {
   }
 
 }
+
+// Component Breakdown
+// LocationComponent *state
+// '-- TitleBar
+// '-- FilterBox
+// '-- ClearButton
+// '-- LocationsList
+//     '-- Location
+//     '-- LocationsIndex
+
+// Data set
+// this.locationID
+// this.city
+// this.country
+// this.countryAbb
+// this.locationName
+// this.countryFlag

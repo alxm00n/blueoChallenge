@@ -1,8 +1,8 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LocationsList from './locationlist.component.js'
-import FilterBox from './controls.component.js'
+import { LocationsList, LocationsIndex } from './locationlist.component.js';
+import FilterBox from './controls.component.js';
 
 export default class LocationComponent extends React.Component {
   constructor(props) {
@@ -30,6 +30,10 @@ export default class LocationComponent extends React.Component {
           locations={this.props.locations}
           filterString={this.state.filterString}
         />
+        <LocationsIndex
+          locations={this.props.locations}
+          filterString={this.state.filterString}
+        />
       </React.Fragment>
     )
   }
@@ -46,4 +50,4 @@ export default class LocationComponent extends React.Component {
 // '-- ClearButton
 // '-- LocationsList
 //     '-- Location
-// '-- LocationsIndex
+//     '-- LocationsIndex

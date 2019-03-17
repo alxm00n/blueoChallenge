@@ -5,21 +5,19 @@ import ReactDOM from 'react-dom';
 class Location extends React.Component {
   render() {
     return (
-      <li>{this.props.name}</li>
+      <li id={this.props.id}>{this.props.name}</li>
     )
   }
 }
 
-export default class LocationsList extends React.Component {
+class LocationsList extends React.Component {
   render() {
     const filterString = this.props.filterString
-
     let locations = []
-    this.props.locations.forEach((location, index) => {
-      if(location.locationName.indexOf(filterString) === -1) {
-        return;
-      }
-      locations.push(<Location key={index*2} name={location.locationName} />)
+
+    this.props.locations.forEach( (location, index) => {
+      if( location.locationName.indexOf(filterString) === -1) { return; }
+      locations.push(<Location key={location.locationID} name={location.locationName} />)
     })
     return (
       <ul>{locations}</ul>
@@ -27,17 +25,32 @@ export default class LocationsList extends React.Component {
   }
 }
 
-// class LocationIndex extends React.Component {
-//   render() {
-//
-//     return ('')
-//   }
-// }
+class LocationsIndex extends React.Component {
+  render() {
+    const filterString = this.props.filterString
+    let locationsIndex = []
+    let firstChar = null
+
+    this.props.locations.forEach( (location, index) => {
+      if( location.locationName.indexOf(filterString) === -1) { return; }
+      let currentFirstChar = location.locationName[0].toUpperCase()
+      if( currentFirstChar !== firstChar ) {
+        firstChar = currentFirstChar
+        locationsIndex.push(<a key={'i'+location.locationID}>{firstChar}</a>)
+      }
+    })
+    return (
+      <p>{locationsIndex}</p>
+    )
+  }
+}
+
+export { LocationsList, LocationsIndex }
 
 // Data set
-// this.locationID = location.locationID
-// this.city = location.city.name
-// this.country = location.country.name
-// this.countryAbb = location.country.abbreviation
-// this.locationName = this.createName(this.city, this.country)
-// this.countryFlag = this.getFlagID(location)
+// this.locationID
+// this.city
+// this.country
+// this.countryAbb
+// this.locationName
+// this.countryFlag

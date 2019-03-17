@@ -342,25 +342,6 @@
       }
     },
     {
-      "locationID": 1006,
-      "name": "",
-      "city": {
-        "name": "",
-        "lat": "",
-        "long": ""
-      },
-      "state": {
-        "name": ""
-      },
-      "country": {
-        "name": "",
-        "currency": "",
-        "currencySymbol": "",
-        "language": "",
-        "abbreviation": ""
-      }
-    },
-    {
       "locationID": 1019,
       "name": "",
       "city": {
@@ -380,7 +361,7 @@
       }
     },
     {
-      "locationID": 1006,
+      "locationID": 1020,
       "name": "",
       "city": {
         "name": "",
@@ -399,7 +380,26 @@
       }
     },
     {
-      "locationID": 1020,
+      "locationID": 1021,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": ""
+      }
+    },
+    {
+      "locationID": 1022,
       "name": "",
       "city": {
         "name": "",

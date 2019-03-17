@@ -2,14 +2,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// class TitleBar extends React.Component {
-//   render() {
-//
-//     return ('')
-//   }
-// }
+class TitleBar extends React.Component {
+  render() {
 
-export default class FilterBox extends React.Component {
+    return ('')
+  }
+}
+
+class FilterBox extends React.Component {
   constructor(props) {
     super(props)
     this.handlerFilterStringChange = this.handlerFilterStringChange.bind(this)
@@ -31,22 +31,11 @@ export default class FilterBox extends React.Component {
   }
 }
 
-// class ClearButton extends React.Component {
-//   render() {
-//
-//     return ('')
-//   }
-// }
+class ClearButton extends React.Component {
+  render() {
 
-// export {
-//   TitleBar
-// }
+    return ('')
+  }
+}
 
-// Component Breakdown
-// LocationComponent *state
-// '-- TitleBar
-// '-- FilterBox
-// '-- ClearButton
-// '-- LocationsList
-//     '-- Location
-// '-- LocationsIndex
+export { TitleBar, FilterBox, ClearButton }

@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { LocationsList, LocationsIndex } from './locationlist.component.js';
-import FilterBox from './controls.component.js';
+import { TitleBar, FilterBox, ClearButton } from './controls.component.js';
 
 export default class LocationComponent extends React.Component {
   constructor(props) {
@@ -26,11 +26,11 @@ export default class LocationComponent extends React.Component {
           filterString={this.state.filterString}
           onFilterStringChange={this.handlerFilterStringChange}
         />
-        <LocationsList
+        <LocationsIndex
           locations={this.props.locations}
           filterString={this.state.filterString}
         />
-        <LocationsIndex
+        <LocationsList
           locations={this.props.locations}
           filterString={this.state.filterString}
         />
@@ -51,3 +51,11 @@ export default class LocationComponent extends React.Component {
 // '-- LocationsList
 //     '-- Location
 //     '-- LocationsIndex
+
+// Data set
+// this.locationID
+// this.city
+// this.country
+// this.countryAbb
+// this.locationName
+// this.countryFlag

@@ -10,6 +10,28 @@ class Location extends React.Component {
   }
 }
 
+class AlphaIndex extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handlerIndexClick = this.handlerIndexClick.bind(this)
+  }
+
+  handlerIndexClick(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    let elID = e.target.getAttribute('data-loc')
+    this.props.onIndexClick(elID)
+  }
+
+  render() {
+    return (
+      <a data-loc={this.props.id}
+         onClick={this.handlerIndexClick}
+      >{this.props.text}</a>
+    )
+  }
+}
+
 class LocationsList extends React.Component {
   render() {
     const filterString = this.props.filterString
@@ -17,7 +39,10 @@ class LocationsList extends React.Component {
 
     this.props.locations.forEach( (location, index) => {
       if( location.locationName.indexOf(filterString) === -1) { return; }
-      locations.push(<Location key={location.locationID} name={location.locationName} />)
+      locations.push(<Location key={location.locationID}
+                               id={location.locationID}
+                               name={location.locationName}
+                               />)
     })
     return (
       <ul>{locations}</ul>
@@ -26,6 +51,17 @@ class LocationsList extends React.Component {
 }
 
 class LocationsIndex extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.handlerIndexClick = this.handlerIndexClick.bind(this)
+  }
+
+  handlerIndexClick(elID) {
+    let el = document.getElementById(elID)
+    el.scrollIntoView(true)
+  }
+
   render() {
     const filterString = this.props.filterString
     let locationsIndex = []
@@ -36,7 +72,11 @@ class LocationsIndex extends React.Component {
       let currentFirstChar = location.locationName[0].toUpperCase()
       if( currentFirstChar !== firstChar ) {
         firstChar = currentFirstChar
-        locationsIndex.push(<a key={'i'+location.locationID}>{firstChar}</a>)
+        locationsIndex.push(<AlphaIndex key={'i'+location.locationID}
+                                        id={location.locationID}
+                                        text={firstChar}
+                                        onIndexClick={this.handlerIndexClick}
+                                        />)
       }
     })
     return (
@@ -46,11 +86,3 @@ class LocationsIndex extends React.Component {
 }
 
 export { LocationsList, LocationsIndex }
-
-// Data set
-// this.locationID
-// this.city
-// this.country
-// this.countryAbb
-// this.locationName
-// this.countryFlag

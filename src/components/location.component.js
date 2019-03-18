@@ -6,7 +6,7 @@ import React from 'react';
 import LocationsList from './list.component.js';
 import LocationsIndex from './index.component.js';
 import { TitleBar, FilterBox, ClearButton } from './controls.component.js';
-
+import Collapse from 'react-bootstrap/Collapse';
 
 export default class LocationComponent extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export default class LocationComponent extends React.Component {
 
   buildGlobalStyle() {
     return css`
-
+      html { font-size: 12px; }
     `
   }
 
@@ -35,6 +35,8 @@ export default class LocationComponent extends React.Component {
       padding: 1.5em;
       background-color: #f2f2f2;
       overflow: hidden;
+      font-family: sans-serif;
+      color: #585757;
     `
   }
 

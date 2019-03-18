@@ -14,18 +14,18 @@ class FilterBox extends React.Component {
 
   buildStyle() {
     return css`
-      width: 21.5em;
-      height: 3em;
+      width: calc(100% - 3em);
+      height: 2.5em;
+      margin: 1em 0;
       border: none;
+      padding-left: 3em;
+      background-color: #ffffff;
       -webkit-box-shadow:
         inset 0px 4px 5px rgba(0,0,0,0.2);
       -moz-box-shadow:
         inset 0px 4px 5px rgba(0,0,0,0.2);
       box-shadow:
         inset 0px 4px 5px rgba(0,0,0,0.2);
-      background-color: #ffffff;
-      margin: 1em 0;
-      padding-left: 3.5em;
     `
   }
 
@@ -36,11 +36,11 @@ class FilterBox extends React.Component {
   render() {
     return (
       <>
-        <Icon content={'\\e986'} size={'1.3em'} color={'#5b9ef5'}
+        <Icon content={'\\e986'} size={'1.6em'} color={'#5b9ef5'}
               addStyle={`
                   position: absolute;
-                  top: 4.2em;
-                  left: 1.8em;
+                  top: 3.6em;
+                  left: 1.7em;
                 `} />
         <form>
           <input type='text'
@@ -59,7 +59,24 @@ class TitleBar extends React.Component {
   render() {
     const Heading = styled.h1`font-size: 2em; margin: 0;`
     return (
-      <Heading>Locations</Heading>
+      <>
+        <Heading>Locations</Heading>
+        <Icon content={'\\e904'} size={'1.2em'} color={'#5b9ef5'}
+              addStyle={`
+                  position: absolute;
+                  top: 1.5em;
+                  right: 3.5em;
+                  cursor: pointer;
+                `} />
+        <Icon content={'\\e9c7'} size={'1.3em'} color={'#5b9ef5'}
+              addStyle={`
+                  position: absolute;
+                  top: 1.3em;
+                  right: 1.5em;
+                  cursor: pointer;
+                  transform: rotate(90deg);
+                `} />
+      </>
     )
   }
 }

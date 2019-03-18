@@ -16,7 +16,7 @@ export default class LocationsList extends React.Component {
     return css`
       position: relative;
       right: -3.5em;
-      height: 20em;
+      height: 19.5em;
       margin-left: -2.5em;
       padding: 0;
       overflow-y: scroll;
@@ -62,6 +62,8 @@ class Location extends React.Component {
   buildStyle() {
     return css`
       display: inline-block;
+      font-size: 1.3em;
+      text-overflow: ellipsis;
     `
   }
 

@@ -41,14 +41,12 @@ class LocationModel {
     this.locationID = locationID
     this.city = city ? city : 'Not Provided'
     this.country = country ? country : null
-    this.countryAbb = abbr ? abbr : null
     this.locationName = country ? `${this.city}-${country}` : `${this.city}`
     this.countryFlag = this.getFlagID(abbr)
   }
 
-// TODO: build logic to get the flagID to match icon flag key
-  getFlagID(location) {
-    return 'XXX'
+  getFlagID(abbr) {
+    return abbr ? abbr.toLowerCase() : null
   }
 
 }

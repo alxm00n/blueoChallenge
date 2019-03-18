@@ -1,8 +1,10 @@
 'use strict';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './assets/flags.css';
 
 class Location extends React.Component {
   constructor(props) {
@@ -29,6 +31,7 @@ class Location extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <>
         <input type='checkbox'
@@ -36,6 +39,7 @@ class Location extends React.Component {
                checked={this.state.selected}
                onChange={this.handlerCheckboxChange}
         />
+        <i className={'flag flag-' + this.props.flag} />
         <li css={this.style}>{this.props.name}</li>
         <br />
       </>
@@ -98,6 +102,7 @@ class LocationsList extends React.Component {
       locations.push(<Location key={location.locationID}
                                id={location.locationID}
                                name={location.locationName}
+                               flag={location.countryFlag}
                                onCheckboxChange={this.handlerCheckboxChange}
                                />)
     })

@@ -15,7 +15,7 @@
         "currency": "MXP",
         "currencySymbol": "$",
         "language": "SPA",
-        "abbreviation": "MEX"
+        "abbreviation": "MX"
       }
     },
     {
@@ -34,7 +34,7 @@
         "currency": "MXP",
         "currencySymbol": "$",
         "language": "SPA",
-        "abbreviation": "MEX"
+        "abbreviation": "MX"
       }
     },
     {
@@ -53,7 +53,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "UKR"
+        "abbreviation": "UA"
       }
     },
     {
@@ -72,7 +72,7 @@
         "currency": "RUP",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "IND"
+        "abbreviation": "IN"
       }
     },
     {
@@ -91,7 +91,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "ENG",
-        "abbreviation": "CAN"
+        "abbreviation": "CA"
       }
     },
     {
@@ -110,7 +110,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "POL"
+        "abbreviation": "PL"
       }
     },
     {
@@ -129,7 +129,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "CAN"
+        "abbreviation": "CA"
       }
     },
     {
@@ -148,7 +148,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "CHI"
+        "abbreviation": "CN"
       }
     },
     {
@@ -167,7 +167,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "IND"
+        "abbreviation": "IN"
       }
     },
     {
@@ -186,7 +186,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "POL"
+        "abbreviation": "PL"
       }
     },
     {
@@ -205,7 +205,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "RUS"
+        "abbreviation": "RS"
       }
     },
     {
@@ -224,7 +224,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "CA"
       }
     },
     {
@@ -243,7 +243,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "MX"
       }
     },
     {
@@ -262,7 +262,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "IS"
       }
     },
     {
@@ -281,7 +281,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "IT"
       }
     },
     {
@@ -300,7 +300,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "DE"
       }
     },
     {
@@ -319,7 +319,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "FI"
       }
     },
     {
@@ -338,7 +338,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "FR"
       }
     },
     {
@@ -357,7 +357,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "GB"
       }
     },
     {
@@ -376,7 +376,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "GB"
       }
     },
     {
@@ -395,7 +395,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "MC"
       }
     },
     {
@@ -414,7 +414,7 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": ""
+        "abbreviation": "AT"
       }
     }
   ]

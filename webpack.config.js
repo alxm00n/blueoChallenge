@@ -6,9 +6,7 @@ module.exports = {
     rules: [{
       test: /\.(js|jsx)$/,
       exclude: /(node_modules|bower_components)/,
-      include: [
-        path.resolve(__dirname, 'src'),
-      ],
+      include: [ path.resolve(__dirname, 'src') ],
       use: {
         loader: 'babel-loader',
         options: {
@@ -16,6 +14,12 @@ module.exports = {
           plugins: ['emotion']
         }
       }
+    },{
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    },{
+      test: /\.(png|jpg|gif)$/,
+      use: ['file-loader']
     }]
   },
   output: {

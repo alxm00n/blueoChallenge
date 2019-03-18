@@ -11,14 +11,24 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
-          plugins: ['emotion']
+          plugins: [
+            [
+              'emotion',
+              {
+                // sourceMap is on by default but source maps are dead code eliminated in production
+                "sourceMap": false,
+                "autoLabel": process.env.NODE_ENV !== 'production',
+                "labelFormat": "[local]",
+                "cssPropOptimization": true
+              }
+            ]]
         }
       }
     },{
       test: /\.css$/,
       use: ['style-loader', 'css-loader'],
     },{
-      test: /\.(png|jpg|gif)$/,
+      test: /\.(png|jpg|gif|eot|ttf|otf|woff)$/,
       use: ['file-loader']
     }]
   },

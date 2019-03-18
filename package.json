@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "graph": "git log --all --decorate --oneline --graph",
-    "start:dev": "webpack-dev-server",
     "dev": "webpack --mode=development --debug --progress",
     "build": "webpack --mode=production --progress",
     "serve": "babel-node ./src/backend/server.js",
-    "serveJSON": "json-server --watch --delay 2000 ./src/backend/db.json"
+    "serveJSON": "json-server --watch --delay 2000 ./src/backend/db.json",
+    "start:dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",

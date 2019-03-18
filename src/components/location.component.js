@@ -4,8 +4,10 @@ import { Global, css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { LocationsList, LocationsIndex } from './filterableList.component.js';
+import LocationsList from './list.component.js';
+import LocationsIndex from './index.component.js';
 import { TitleBar, FilterBox, ClearButton } from './controls.component.js';
+
 
 export default class LocationComponent extends React.Component {
   constructor(props) {

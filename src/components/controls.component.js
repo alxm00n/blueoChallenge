@@ -1,15 +1,10 @@
 'use strict';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-class TitleBar extends React.Component {
-  render() {
-
-    return ('')
-  }
-}
+import './assets/icons/icons.css';
 
 class FilterBox extends React.Component {
   constructor(props) {
@@ -41,16 +36,37 @@ class FilterBox extends React.Component {
 
   render() {
     return (
-      <form>
-        <input type='text'
-               placeholder='Filter Locations'
-               value={this.props.filterString}
-               onChange={this.handlerFilterStringChange}
-               css={this.style}/>
-      </form>
+      <>
+        <i className={'icon-'} css={css`
+          color: #5b9ef5;
+          font-size: 1.3em;
+          position: absolute;
+          top: 4.2em;
+          left: 1.8em;
+          &::before {
+            content: "\e986";
+          }
+        `}/>
+        <form>
+          <input type='text'
+                 placeholder='Filter Locations'
+                 value={this.props.filterString}
+                 onChange={this.handlerFilterStringChange}
+                 css={this.style}/>
+        </form>
+      </>
     )
   }
 }
+
+
+class TitleBar extends React.Component {
+  render() {
+
+    return ('')
+  }
+}
+
 
 class ClearButton extends React.Component {
   render() {

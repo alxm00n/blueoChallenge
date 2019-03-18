@@ -3,7 +3,6 @@
 import { Global, css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import LocationsList from './list.component.js';
 import LocationsIndex from './index.component.js';
 import { TitleBar, FilterBox, ClearButton } from './controls.component.js';
@@ -55,12 +54,11 @@ export default class LocationComponent extends React.Component {
   }
 
   render() {
-    const Heading = styled.h1`font-size: 2em; margin: 0;`
     const Divider = styled.hr`border-top: 1px solid #d2d2d2;`
     return (
       <div css={this.style}>
         <Global styles={this.globalStyle} />
-        <Heading>Locations</Heading>
+        <TitleBar />
         <FilterBox
           filterString={this.state.filterString}
           onFilterStringChange={this.handlerFilterStringChange}

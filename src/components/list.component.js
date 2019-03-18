@@ -3,7 +3,6 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './assets/flags/flags.css';
 
 export default class LocationsList extends React.Component {

@@ -3,8 +3,7 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './assets/icons/icons.css';
+import Icon from './icon.component.js';
 
 class FilterBox extends React.Component {
   constructor(props) {
@@ -37,16 +36,12 @@ class FilterBox extends React.Component {
   render() {
     return (
       <>
-        <i className={'icon-'} css={css`
-          color: #5b9ef5;
-          font-size: 1.3em;
-          position: absolute;
-          top: 4.2em;
-          left: 1.8em;
-          &::before {
-            content: "\e986";
-          }
-        `}/>
+        <Icon content={'\\e986'} size={'1.3em'} color={'#5b9ef5'}
+              addStyle={`
+                  position: absolute;
+                  top: 4.2em;
+                  left: 1.8em;
+                `} />
         <form>
           <input type='text'
                  placeholder='Filter Locations'
@@ -62,8 +57,10 @@ class FilterBox extends React.Component {
 
 class TitleBar extends React.Component {
   render() {
-
-    return ('')
+    const Heading = styled.h1`font-size: 2em; margin: 0;`
+    return (
+      <Heading>Locations</Heading>
+    )
   }
 }
 

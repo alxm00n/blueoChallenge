@@ -30,8 +30,8 @@ export default class LocationComponent extends React.Component {
   buildStyle() {
     return css`
       position: absolute;
-      width: 21em;
-      height: 29em;
+      width: 20em;
+      height: 30em;
       padding: 1.5em;
       background-color: #f2f2f2;
       overflow: hidden;
@@ -65,6 +65,7 @@ export default class LocationComponent extends React.Component {
           filterString={this.state.filterString}
           onFilterStringChange={this.handlerFilterStringChange}
         />
+        <ClearButton />
         <LocationsIndex
           locations={this.props.locations}
           filterString={this.state.filterString}

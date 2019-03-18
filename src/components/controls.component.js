@@ -39,7 +39,7 @@ class FilterBox extends React.Component {
         <Icon content={'\\e986'} size={'1.6em'} color={'#5b9ef5'}
               addStyle={`
                   position: absolute;
-                  top: 3.6em;
+                  top: 3.4em;
                   left: 1.7em;
                 `} />
         <form>
@@ -57,7 +57,7 @@ class FilterBox extends React.Component {
 
 class TitleBar extends React.Component {
   render() {
-    const Heading = styled.h1`font-size: 2em; margin: 0;`
+    const Heading = styled.h1`font-size: 1.8em; margin: 0;`
     return (
       <>
         <Heading>Locations</Heading>
@@ -84,8 +84,13 @@ class TitleBar extends React.Component {
 
 class ClearButton extends React.Component {
   render() {
-
-    return ('')
+    return (
+      <a css={css`color: #5b9ef5; cursor: pointer;`}>
+        <Icon content={'\\ea0f'} size={'0.8em'} color={'#5b9ef5'}
+              addStyle={`margin-right: 0.5em;`}/>
+        Clear All
+      </a>
+    )
   }
 }
 

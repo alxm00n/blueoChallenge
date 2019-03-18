@@ -63,7 +63,7 @@ class Location extends React.Component {
     return css`
       display: inline-block;
       font-size: 1.3em;
-      text-overflow: ellipsis;
+      word-break: break-all;
     `
   }
 
@@ -77,7 +77,7 @@ class Location extends React.Component {
 
   render() {
     return (
-      <>
+      <div css={css`margin: 0.5em 0;`}>
         <input type='checkbox'
                id={this.props.id}
                checked={this.state.selected}
@@ -85,8 +85,7 @@ class Location extends React.Component {
         />
         <i className={'flag flag-' + this.props.flag} />
         <li css={this.style}>{this.props.name}</li>
-        <br />
-      </>
+      </div>
     )
   }
 }

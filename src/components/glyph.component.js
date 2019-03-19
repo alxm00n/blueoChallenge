@@ -4,11 +4,16 @@ import { css, jsx } from '@emotion/core';
 import React from 'react';
 import './assets/icons/icons.css';
 
-export default class Icon extends React.Component {
+export default class Glyph extends React.Component {
   constructor(props) {
     super(props)
-    this.style = this.buildStyle()
+    this.handlerClick = this.handlerClick.bind(this)
   }
+
+  handlerClick(e) {
+    this.props.onClick(e)
+  }
+
   buildStyle() {
     return css`
       color: ${this.props.color};
@@ -19,10 +24,13 @@ export default class Icon extends React.Component {
       ${this.props.addStyle}
     `
   }
+
   render() {
+    this.style = this.buildStyle()
     return (
       <i className='icon'
-         css={this.style} />
+         css={this.style}
+         onClick={this.handlerClick}  />
     )
   }
 }

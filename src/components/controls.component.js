@@ -3,7 +3,7 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
-import Icon from './icon.component.js';
+import Glyph from './glyph.component.js';
 
 class FilterBox extends React.Component {
   constructor(props) {
@@ -36,11 +36,11 @@ class FilterBox extends React.Component {
   render() {
     return (
       <>
-        <Icon content={'\\e986'} size={'1.6em'} color={'#5b9ef5'}
+        <Glyph content={'\\e986'} size={'1.6em'} color={'#5b9ef5'}
               addStyle={`
                   position: absolute;
-                  top: 3.4em;
-                  left: 1.7em;
+                  top: 3.2em;
+                  left: 1.2em;
                 `} />
         <form>
           <input type='text'
@@ -56,23 +56,42 @@ class FilterBox extends React.Component {
 
 
 class TitleBar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: true
+    }
+    this.handlerToggle = this.handlerToggle.bind(this)
+  }
+
+  handlerToggle(e) {
+    this.props.onOpenClick(e)
+    this.setState({
+      open: !this.state.open
+    })
+  }
+
   render() {
     const Heading = styled.h1`font-size: 1.8em; margin: 0;`
+    const glyphContent = this.state.open ? '\\e904' : '\\e903'
+    debugger
     return (
       <>
         <Heading>Locations</Heading>
-        <Icon content={'\\e904'} size={'1.2em'} color={'#5b9ef5'}
+        <Glyph content={glyphContent} size={'1.3em'} color={'#5b9ef5'}
               addStyle={`
                   position: absolute;
-                  top: 1.5em;
-                  right: 3.5em;
+                  top: 0.6em;
+                  right: 3em;
                   cursor: pointer;
-                `} />
-        <Icon content={'\\e9c7'} size={'1.3em'} color={'#5b9ef5'}
+                `}
+              onClick={this.handlerToggle}
+        />
+        <Glyph content={'\\e9c7'} size={'1.3em'} color={'#5b9ef5'}
               addStyle={`
                   position: absolute;
-                  top: 1.3em;
-                  right: 1.5em;
+                  top: 0.5em;
+                  right: 1em;
                   cursor: pointer;
                   transform: rotate(90deg);
                 `} />
@@ -96,7 +115,7 @@ class ClearButton extends React.Component {
     return (
       <a css={css`color: #5b9ef5; cursor: pointer;`}
          onClick={this.handlerClearCLick}>
-        <Icon content={'\\ea0f'} size={'0.8em'} color={'#5b9ef5'}
+        <Glyph content={'\\ea0f'} size={'0.8em'} color={'#5b9ef5'}
               addStyle={`margin-right: 0.5em;`}/>
         Clear All
       </a>

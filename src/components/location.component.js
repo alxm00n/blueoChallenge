@@ -16,6 +16,7 @@ export default class LocationComponent extends React.Component {
     }
     this.handlerFilterStringChange = this.handlerFilterStringChange.bind(this)
     this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
+    this.handlerClearClick = this.handlerClearClick.bind(this)
     this.selectedLocations = []
     this.style = this.buildStyle()
     this.globalStyle = this.buildGlobalStyle()
@@ -55,6 +56,10 @@ export default class LocationComponent extends React.Component {
     console.log(`Selected Locations: ${this.selectedLocations}`)
   }
 
+  handlerClearClick(e) {
+    debugger
+  }
+
   render() {
     const Divider = styled.hr`border-top: 1px solid #d2d2d2;`
     return (
@@ -65,7 +70,9 @@ export default class LocationComponent extends React.Component {
           filterString={this.state.filterString}
           onFilterStringChange={this.handlerFilterStringChange}
         />
-        <ClearButton />
+        <ClearButton
+          onClearClick={this.handlerClearClick}
+        />
         <LocationsIndex
           locations={this.props.locations}
           filterString={this.state.filterString}

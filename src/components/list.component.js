@@ -62,8 +62,13 @@ class Location extends React.Component {
   buildStyle() {
     return css`
       display: inline-block;
+      width: 10em;
       font-size: 1.3em;
-      word-break: break-all;
+      line-height: 1.4em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
     `
   }
 
@@ -77,7 +82,7 @@ class Location extends React.Component {
 
   render() {
     return (
-      <div css={css`margin: 0.5em 0;`}>
+      <div>
         <input type='checkbox'
                id={this.props.id}
                checked={this.state.selected}

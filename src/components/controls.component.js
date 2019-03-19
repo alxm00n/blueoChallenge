@@ -83,9 +83,19 @@ class TitleBar extends React.Component {
 
 
 class ClearButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handlerClearCLick = this.handlerClearCLick.bind(this)
+  }
+
+  handlerClearCLick(e) {
+    this.props.onClearClick(e)
+  }
+
   render() {
     return (
-      <a css={css`color: #5b9ef5; cursor: pointer;`}>
+      <a css={css`color: #5b9ef5; cursor: pointer;`}
+         onClick={this.handlerClearCLick}>
         <Icon content={'\\ea0f'} size={'0.8em'} color={'#5b9ef5'}
               addStyle={`margin-right: 0.5em;`}/>
         Clear All

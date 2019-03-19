@@ -74,7 +74,6 @@ class TitleBar extends React.Component {
   render() {
     const Heading = styled.h1`font-size: 1.8em; margin: 0;`
     const glyphContent = this.state.open ? '\\e904' : '\\e903'
-    debugger
     return (
       <>
         <Heading>Locations</Heading>

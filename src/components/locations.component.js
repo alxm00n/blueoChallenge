@@ -7,7 +7,7 @@ import LocationsList from './list.component.js';
 import LocationsIndex from './index.component.js';
 import { FilterBox, ClearButton } from './controls.component.js';
 
-export default class LocationComponent extends React.Component {
+export default class LocationsComponent extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

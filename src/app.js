@@ -5,8 +5,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Collapse from 'react-bootstrap/Collapse';
-import LocationService from './components/location.service.js';
-import LocationComponent from './components/location.component.js'
+import LocationsService from './components/locations.service.js';
+import LocationsComponent from './components/locations.component.js'
 import { TitleBar } from './components/controls.component.js';
 
 export default class App {
@@ -17,7 +17,7 @@ export default class App {
   init() {
     const LOCATIONS_URL = `http://localhost:3000/locations` // test url
 
-    let service = new LocationService(LOCATIONS_URL)
+    let service = new LocationsService(LOCATIONS_URL)
     let locations = service.getLocations()
     locations.then( data => { this.startLocationComponent(data) } )
              .catch(error => console.log(`Locations request failed: ${error.message}`))
@@ -26,13 +26,13 @@ export default class App {
 
   startLocationComponent(data) {
     ReactDOM.render(
-      <LocationComponentWrap locations={data} />
+      <LocationsComponentWrap locations={data} />
     ,this.el)
   }
 
 }
 
-class LocationComponentWrap extends React.Component {
+class LocationsComponentWrap extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -75,7 +75,9 @@ class LocationComponentWrap extends React.Component {
         <TitleBar onOpenClick={this.handlerOpen} />
         <Collapse in={this.state.open}>
           <div>
-            <LocationComponent data={this.props.locations}/>
+            {this.state.open &&
+              <LocationsComponent data={this.props.locations}/>
+            }
           </div>
         </Collapse>
       </div>

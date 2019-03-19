@@ -1,6 +1,6 @@
 'use strict';
 
-export default class LocationService {
+export default class LocationsService {
   constructor(url = this.isRequired`url`, options = {}) {
     this.url = url
     this.options = options

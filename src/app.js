@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import Collapse from 'react-bootstrap/Collapse';
 import LocationsService from './components/locations.service.js';
 import LocationsComponent from './components/locations.component.js'
-import { TitleBar } from './components/controls.component.js';
+import TitleBar from './components/titlebar.component.js';
 
 export default class App {
   constructor(el) {
@@ -36,11 +36,12 @@ class LocationsComponentWrap extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: true
+      open: true,
+      minimized: false
     }
-    this.handlerOpen = this.handlerOpen.bind(this)
+    this.handlerCollapse = this.handlerCollapse.bind(this)
+    this.handlerMinimize = this.handlerMinimize.bind(this)
     this.globalStyle = this.buildGlobalStyle()
-    this.style = this.buildStyle()
   }
 
   buildGlobalStyle() {
@@ -50,7 +51,7 @@ class LocationsComponentWrap extends React.Component {
   }
 
   buildStyle() {
-    return css`
+    let style = `
       position: absolute;
       width: 20em;
       max-height: 30em;
@@ -60,19 +61,39 @@ class LocationsComponentWrap extends React.Component {
       font-family: sans-serif;
       color: #585757;
     `
+    if (this.state.minimized) {
+      style+= `
+        top: 9em;
+        left: -9em;
+        transform: rotate(270deg);
+      `
+    }
+    return css(style)
   }
 
-  handlerOpen(e) {
+  handlerCollapse(e) {
     this.setState({
       open: !this.state.open
     })
   }
 
+  handlerMinimize(e) {
+    this.setState({
+      open: false,
+      minimized: !this.state.minimized
+    })
+  }
+
   render() {
+    this.style = this.buildStyle()
     return (
       <div css={this.style}>
         <Global styles={this.globalStyle} />
-        <TitleBar onOpenClick={this.handlerOpen} />
+        <TitleBar isOpen={this.state.open}
+                  isMinimized={this.state.minimized}
+                  onCollapseClick={this.handlerCollapse}
+                  onMinimizeClick={this.handlerMinimize}
+        />
         <Collapse in={this.state.open}>
           <div>
             {this.state.open &&

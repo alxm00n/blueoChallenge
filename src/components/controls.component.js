@@ -1,7 +1,6 @@
 'use strict';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import styled from '@emotion/styled';
 import React from 'react';
 import Glyph from './glyph.component.js';
 
@@ -54,52 +53,6 @@ class FilterBox extends React.Component {
   }
 }
 
-
-class TitleBar extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      open: true
-    }
-    this.handlerToggle = this.handlerToggle.bind(this)
-  }
-
-  handlerToggle(e) {
-    this.props.onOpenClick(e)
-    this.setState({
-      open: !this.state.open
-    })
-  }
-
-  render() {
-    const Heading = styled.h1`font-size: 1.8em; margin: 0;`
-    const glyphContent = this.state.open ? '\\e904' : '\\e903'
-    return (
-      <>
-        <Heading>Locations</Heading>
-        <Glyph content={glyphContent} size={'1.3em'} color={'#5b9ef5'}
-              addStyle={`
-                  position: absolute;
-                  top: 0.6em;
-                  right: 3em;
-                  cursor: pointer;
-                `}
-              onClick={this.handlerToggle}
-        />
-        <Glyph content={'\\e9c7'} size={'1.3em'} color={'#5b9ef5'}
-              addStyle={`
-                  position: absolute;
-                  top: 0.5em;
-                  right: 1em;
-                  cursor: pointer;
-                  transform: rotate(90deg);
-                `} />
-      </>
-    )
-  }
-}
-
-
 class ClearButton extends React.Component {
   constructor(props) {
     super(props)
@@ -122,4 +75,4 @@ class ClearButton extends React.Component {
   }
 }
 
-export { TitleBar, FilterBox, ClearButton }
+export { FilterBox, ClearButton }

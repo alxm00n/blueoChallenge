@@ -30,11 +30,12 @@ export default class LocationsList extends React.Component {
   }
 
   render() {
-    const filterString = this.props.filterString
+    const filterString = this.props.filterString.toLowerCase()
     let locations = []
 
     this.props.locations.forEach( (location, index) => {
-      if( location.locationName.indexOf(filterString) === -1) { return; }
+      let name = location.locationName.toLowerCase()
+      if( name.indexOf(filterString) === -1) { return; }
       locations.push(<Location key={location.locationID}
                                id={location.locationID}
                                name={location.locationName}

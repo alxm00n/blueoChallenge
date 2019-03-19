@@ -20,6 +20,7 @@ export default class LocationsIndex extends React.Component {
       > a {
         display: block;
         cursor: pointer;
+        font-size: 0.9em;
       }
     `
   }

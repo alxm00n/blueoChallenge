@@ -1,8 +1,13 @@
 'use strict';
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Collapse from 'react-bootstrap/Collapse';
 import LocationService from './components/location.service.js';
 import LocationComponent from './components/location.component.js'
+import { TitleBar } from './components/controls.component.js';
 
 export default class App {
   constructor(el) {
@@ -21,25 +26,60 @@ export default class App {
 
   startLocationComponent(data) {
     ReactDOM.render(
-      <LocationComponent locations={data} />
+      <LocationComponentWrap locations={data} />
     ,this.el)
   }
 
 }
 
-// Component Breakdown
-// LocationComponent *state
-// '-- TitleBar
-// '-- FilterBox
-// '-- ClearButton
-// '-- LocationsList
-//     '-- Location
-//     '-- LocationsIndex
+class LocationComponentWrap extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: true
+    }
+    this.handlerOpen = this.handlerOpen.bind(this)
+    this.globalStyle = this.buildGlobalStyle()
+    this.style = this.buildStyle()
+  }
 
-// Data set
-// this.locationID
-// this.city
-// this.country
-// this.countryAbb
-// this.locationName
-// this.countryFlag
+  buildGlobalStyle() {
+    return css`
+      html { font-size: 12px; }
+    `
+  }
+
+  buildStyle() {
+    return css`
+      position: absolute;
+      width: 20em;
+      max-height: 30em;
+      padding: 1em;
+      background-color: #f2f2f2;
+      overflow: hidden;
+      font-family: sans-serif;
+      color: #585757;
+    `
+  }
+
+  handlerOpen(e) {
+    this.setState({
+      open: !this.state.open
+    })
+  }
+
+  render() {
+    return (
+      <div css={this.style}>
+        <Global styles={this.globalStyle} />
+        <TitleBar onOpenClick={this.handlerOpen} />
+        <Collapse in={this.state.open}>
+          <div>
+            <LocationComponent data={this.props.locations}/>
+          </div>
+        </Collapse>
+      </div>
+    )
+  }
+
+}

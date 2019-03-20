@@ -11,12 +11,12 @@ export default class LocationsComponent extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterString: ''
+      filterString: '',
+      selectedLocations: []
     }
     this.handlerFilterStringChange = this.handlerFilterStringChange.bind(this)
     this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
     this.handlerClearClick = this.handlerClearClick.bind(this)
-    this.selectedLocations = []
   }
 
   handlerFilterStringChange(filterString) {
@@ -26,16 +26,35 @@ export default class LocationsComponent extends React.Component {
   }
 
   handlerCheckboxChange(checked, id) {
-    if(checked) {
-      this.selectedLocations.push(id)
-    } else {
-      this.selectedLocations = this.selectedLocations.filter( locationId => locationId !== id )
-    }
-    console.log(`Selected Locations: ${this.selectedLocations}`)
+    let locID = Number(id)
+    debugger
+    this.props.data.forEach( (location, index) => {
+      if (location.locationID !== locID) {
+        return
+      } else if (location.locationID === locID) {
+        location.selected = checked
+        if (checked) {
+          console.log(`Selected Location: ${location.locationName} - ${location.locationID}`)
+        } else {
+          console.log(`XXX- Deselected Location: ${location.locationName} - ${location.locationID}`)
+        }
+      }
+    })
+    this.setState((state, props) => ({
+      selectedLocations: id
+    }))
   }
 
   handlerClearClick(e) {
-    debugger
+    this.props.data.forEach( (location, index) => {
+      if (!location.selected) { return }
+      location.selected = false
+      console.log(`XXX- Deselected Location: ${location.locationName} - ${location.locationID}`)
+    })
+    console.log(`XXX- All locations deselected`)
+    this.setState((state, props) => ({
+      selectedLocations: []
+    }))
   }
 
   render() {

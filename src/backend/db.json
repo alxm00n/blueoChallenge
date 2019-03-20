@@ -1,6 +1,7 @@
 {
   "locations": [{
       "locationID": 1001,
+      "enabled": false,
       "name": "Queretaro",
       "city": {
         "name": "Santiago de Queretaro",
@@ -20,6 +21,7 @@
     },
     {
       "locationID": 1002,
+      "enabled": false,
       "name": "Guadalajara",
       "city": {
         "name": "Guadalajara",
@@ -39,6 +41,7 @@
     },
     {
       "locationID": 1003,
+      "enabled": false,
       "name": "Kiev",
       "city": {
         "name": "Kiev",
@@ -58,9 +61,10 @@
     },
     {
       "locationID": 1004,
-      "name": "Bangalore",
+      "enabled": false,
+      "name": "Bilbao",
       "city": {
-        "name": "Bengaluru",
+        "name": "Bilbao",
         "lat": "",
         "long": ""
       },
@@ -69,14 +73,15 @@
       },
       "country": {
         "name": "",
-        "currency": "RUP",
+        "currency": "EUR",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "IN"
+        "abbreviation": "ES"
       }
     },
     {
       "locationID": 1005,
+      "enabled": false,
       "name": "Kiev",
       "city": {
         "name": "Kiev",
@@ -96,6 +101,7 @@
     },
     {
       "locationID": 1006,
+      "enabled": false,
       "name": "Krakow",
       "city": {
         "name": "Krakow",
@@ -115,6 +121,7 @@
     },
     {
       "locationID": 1007,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -134,6 +141,7 @@
     },
     {
       "locationID": 1008,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -153,6 +161,7 @@
     },
     {
       "locationID": 1009,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -172,6 +181,7 @@
     },
     {
       "locationID": 1010,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -191,6 +201,7 @@
     },
     {
       "locationID": 1011,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -210,6 +221,7 @@
     },
     {
       "locationID": 1012,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -229,6 +241,7 @@
     },
     {
       "locationID": 1013,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -248,6 +261,7 @@
     },
     {
       "locationID": 1014,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -267,9 +281,10 @@
     },
     {
       "locationID": 1015,
+      "enabled": false,
       "name": "",
       "city": {
-        "name": "",
+        "name": "Rome",
         "lat": "",
         "long": ""
       },
@@ -277,7 +292,7 @@
         "name": ""
       },
       "country": {
-        "name": "",
+        "name": "Italy",
         "currency": "",
         "currencySymbol": "",
         "language": "",
@@ -286,9 +301,10 @@
     },
     {
       "locationID": 1016,
-      "name": "",
+      "enabled": false,
+      "name": "München",
       "city": {
-        "name": "",
+        "name": "München",
         "lat": "",
         "long": ""
       },
@@ -296,7 +312,7 @@
         "name": ""
       },
       "country": {
-        "name": "",
+        "name": "Germany",
         "currency": "",
         "currencySymbol": "",
         "language": "",
@@ -305,9 +321,10 @@
     },
     {
       "locationID": 1017,
-      "name": "",
+      "enabled": false,
+      "name": "Birmingham",
       "city": {
-        "name": "",
+        "name": "Birmingham",
         "lat": "",
         "long": ""
       },
@@ -319,11 +336,12 @@
         "currency": "",
         "currencySymbol": "",
         "language": "",
-        "abbreviation": "FI"
+        "abbreviation": "GB"
       }
     },
     {
       "locationID": 1018,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -343,9 +361,10 @@
     },
     {
       "locationID": 1019,
-      "name": "",
+      "enabled": false,
+      "name": "Bristol",
       "city": {
-        "name": "",
+        "name": "Bristol",
         "lat": "",
         "long": ""
       },
@@ -353,7 +372,7 @@
         "name": ""
       },
       "country": {
-        "name": "",
+        "name": "United Kingdom",
         "currency": "",
         "currencySymbol": "",
         "language": "",
@@ -362,6 +381,7 @@
     },
     {
       "locationID": 1020,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -381,6 +401,7 @@
     },
     {
       "locationID": 1021,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",
@@ -400,6 +421,7 @@
     },
     {
       "locationID": 1022,
+      "enabled": false,
       "name": "",
       "city": {
         "name": "",

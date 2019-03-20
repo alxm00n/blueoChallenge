@@ -29,22 +29,27 @@ export default class LocationsList extends React.Component {
     this.props.onCheckboxChange(checked, id)
   }
 
-  render() {
+  buldLocationsCollection() {
     const filterString = this.props.filterString.toLowerCase()
     let locations = []
-
     this.props.locations.forEach( (location, index) => {
       let name = location.locationName.toLowerCase()
       if( name.indexOf(filterString) === -1) { return; }
       locations.push(<Location key={location.locationID}
-                               id={location.locationID}
-                               name={location.locationName}
-                               flag={location.countryFlag}
-                               onCheckboxChange={this.handlerCheckboxChange}
-                               />)
-    })
+        id={location.locationID}
+        name={location.locationName}
+        flag={location.countryFlag}
+        onCheckboxChange={this.handlerCheckboxChange}
+        checked={location.selected}
+        />)
+      })
+    return locations
+  }
+
+  render() {
+    let locationsCollection = this.buldLocationsCollection()
     return (
-      <ul css={this.style}>{locations}</ul>
+      <ul css={this.style}>{locationsCollection}</ul>
     )
   }
 }
@@ -53,9 +58,6 @@ export default class LocationsList extends React.Component {
 class Location extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      selected: false
-    }
     this.handlerCheckboxChange = this.handlerCheckboxChange.bind(this)
     this.style = this.buildStyle()
   }
@@ -74,11 +76,7 @@ class Location extends React.Component {
   }
 
   handlerCheckboxChange(e) {
-    const value = e.target.checked
     this.props.onCheckboxChange(e)
-    this.setState({
-      selected: value
-    })
   }
 
   render() {
@@ -86,7 +84,7 @@ class Location extends React.Component {
       <div>
         <input type='checkbox'
                id={this.props.id}
-               checked={this.state.selected}
+               checked={this.props.checked}
                onChange={this.handlerCheckboxChange}
         />
         <i className={'flag flag-' + this.props.flag} />

@@ -31,13 +31,14 @@ export default class LocationsIndex extends React.Component {
   }
 
   render() {
-    const filterString = this.props.filterString
+    const filterString = this.props.filterString.toLowerCase()
     let locationsIndex = []
     let firstChar = null
 
     this.props.locations.forEach( (location, index) => {
-      if( location.locationName.indexOf(filterString) === -1) { return; }
-      let currentFirstChar = location.locationName[0].toUpperCase()
+      let name = location.locationName.toLowerCase()
+      if( name.indexOf(filterString) === -1) { return; }
+      let currentFirstChar = name[0].toUpperCase()
       if( currentFirstChar !== firstChar ) {
         firstChar = currentFirstChar
         locationsIndex.push(<Index key={'i'+location.locationID}

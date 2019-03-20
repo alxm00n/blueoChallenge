@@ -37,8 +37,9 @@ export default class LocationsService {
 }
 
 class LocationModel {
-  constructor({ locationID, city: { name: city }, country: { name: country, abbreviation: abbr } }) {
+  constructor({ locationID, enabled, city: { name: city }, country: { name: country, abbreviation: abbr } }) {
     this.locationID = locationID
+    this.selected = enabled || false
     this.city = city ? city : 'Not Provided'
     this.country = country ? country : null
     this.locationName = country ? `${this.city}-${country}` : `${this.city}`

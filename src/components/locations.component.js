@@ -27,22 +27,29 @@ export default class LocationsComponent extends React.Component {
 
   handlerCheckboxChange(checked, id) {
     let locID = Number(id)
-    debugger
     this.props.data.forEach( (location, index) => {
       if (location.locationID !== locID) {
         return
       } else if (location.locationID === locID) {
         location.selected = checked
+
         if (checked) {
-          console.log(`Selected Location: ${location.locationName} - ${location.locationID}`)
+          console.log(`Selected Location: ${location.locationName} - ${locID}`)
+          this.setState((state) => {
+            const selectedLocations = state.selectedLocations.concat(locID)
+            return { selectedLocations }
+          })
         } else {
-          console.log(`XXX- Deselected Location: ${location.locationName} - ${location.locationID}`)
+          console.log(`XXX- Deselected Location: ${location.locationName} - ${locID}`)
+          this.setState((state) => {
+            const selectedLocations = state.selectedLocations.filter( selectedLocation => {
+              return locID !== selectedLocation
+            })
+            return { selectedLocations }
+          })
         }
       }
     })
-    this.setState((state, props) => ({
-      selectedLocations: id
-    }))
   }
 
   handlerClearClick(e) {

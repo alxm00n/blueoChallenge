@@ -78,9 +78,12 @@ class LocationsComponentWrap extends React.Component {
   }
 
   handlerMinimize(e) {
-    this.setState({
-      open: false,
-      minimized: !this.state.minimized
+    this.setState( state => {
+      const open = !state.minimized ? false : true
+      return {
+        open: open,
+        minimized: !state.minimized
+      }
     })
   }
 

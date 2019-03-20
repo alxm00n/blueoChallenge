@@ -1,0 +1,443 @@
+{
+  "locations": [{
+      "locationID": 1001,
+      "enabled": false,
+      "name": "Queretaro",
+      "city": {
+        "name": "Santiago de Queretaro",
+        "lat": "20.58806",
+        "long": "-100.38806"
+      },
+      "state": {
+        "name": "Queretaro"
+      },
+      "country": {
+        "name": "Mexico",
+        "currency": "MXP",
+        "currencySymbol": "$",
+        "language": "SPA",
+        "abbreviation": "MX"
+      }
+    },
+    {
+      "locationID": 1002,
+      "enabled": false,
+      "name": "Guadalajara",
+      "city": {
+        "name": "Guadalajara",
+        "lat": "20.58806",
+        "long": "-100.38806"
+      },
+      "state": {
+        "name": "Jalisco"
+      },
+      "country": {
+        "name": "Mexico",
+        "currency": "MXP",
+        "currencySymbol": "$",
+        "language": "SPA",
+        "abbreviation": "MX"
+      }
+    },
+    {
+      "locationID": 1003,
+      "enabled": false,
+      "name": "Kiev",
+      "city": {
+        "name": "Kiev",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Ukraine",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "UA"
+      }
+    },
+    {
+      "locationID": 1004,
+      "enabled": false,
+      "name": "Bilbao",
+      "city": {
+        "name": "Bilbao",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "EUR",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "ES"
+      }
+    },
+    {
+      "locationID": 1005,
+      "enabled": false,
+      "name": "Kiev",
+      "city": {
+        "name": "Kiev",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Canada",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "ENG",
+        "abbreviation": "CA"
+      }
+    },
+    {
+      "locationID": 1006,
+      "enabled": false,
+      "name": "Krakow",
+      "city": {
+        "name": "Krakow",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "PL"
+      }
+    },
+    {
+      "locationID": 1007,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Canada",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "CA"
+      }
+    },
+    {
+      "locationID": 1008,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "China",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "CN"
+      }
+    },
+    {
+      "locationID": 1009,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "India",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "IN"
+      }
+    },
+    {
+      "locationID": 1010,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Poland",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "PL"
+      }
+    },
+    {
+      "locationID": 1011,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Russia",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "RS"
+      }
+    },
+    {
+      "locationID": 1012,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "CA"
+      }
+    },
+    {
+      "locationID": 1013,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "MX"
+      }
+    },
+    {
+      "locationID": 1014,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "IS"
+      }
+    },
+    {
+      "locationID": 1015,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "Rome",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Italy",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "IT"
+      }
+    },
+    {
+      "locationID": 1016,
+      "enabled": false,
+      "name": "München",
+      "city": {
+        "name": "München",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "Germany",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "DE"
+      }
+    },
+    {
+      "locationID": 1017,
+      "enabled": false,
+      "name": "Birmingham",
+      "city": {
+        "name": "Birmingham",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "GB"
+      }
+    },
+    {
+      "locationID": 1018,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "FR"
+      }
+    },
+    {
+      "locationID": 1019,
+      "enabled": false,
+      "name": "Bristol",
+      "city": {
+        "name": "Bristol",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "United Kingdom",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "GB"
+      }
+    },
+    {
+      "locationID": 1020,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "GB"
+      }
+    },
+    {
+      "locationID": 1021,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "MC"
+      }
+    },
+    {
+      "locationID": 1022,
+      "enabled": false,
+      "name": "",
+      "city": {
+        "name": "",
+        "lat": "",
+        "long": ""
+      },
+      "state": {
+        "name": ""
+      },
+      "country": {
+        "name": "",
+        "currency": "",
+        "currencySymbol": "",
+        "language": "",
+        "abbreviation": "AT"
+      }
+    }
+  ]
+}

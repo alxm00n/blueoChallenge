@@ -1,7 +1,7 @@
 # Locations Component
 
 Install Instructions
-1. git clone https://github.com/alxm00n/blueoChallenge.git
+1. git clone https://github.com/alxm00n/locationsComponent.git
 2. Navigate to locationsComponent folder
 3. npm install - to install dependencies
 4. npm run serveJSON - to start the mock server at http://localhost:3000/locations

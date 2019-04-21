@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import styled from '@emotion/styled';
-import React from 'react';
-import './assets/flags/flags.css';
+import { css, jsx } from '@emotion/core'
+import React from 'react'
+import './assets/flags/flags.css'
 
 export default class LocationsList extends React.Component {
   constructor(props) {
@@ -32,28 +31,30 @@ export default class LocationsList extends React.Component {
   buldLocationsCollection() {
     const filterString = this.props.filterString.toLowerCase()
     let locations = []
-    this.props.locations.forEach( (location, index) => {
+    this.props.locations.forEach(location => {
       let name = location.locationName.toLowerCase()
-      if( name.indexOf(filterString) === -1) { return; }
-      locations.push(<Location key={location.locationID}
-        id={location.locationID}
-        name={location.locationName}
-        flag={location.countryFlag}
-        onCheckboxChange={this.handlerCheckboxChange}
-        checked={location.selected}
-        />)
-      })
+      if (name.indexOf(filterString) === -1) {
+        return
+      }
+      locations.push(
+        <Location
+          key={location.locationID}
+          id={location.locationID}
+          name={location.locationName}
+          flag={location.countryFlag}
+          onCheckboxChange={this.handlerCheckboxChange}
+          checked={location.selected}
+        />
+      )
+    })
     return locations
   }
 
   render() {
     let locationsCollection = this.buldLocationsCollection()
-    return (
-      <ul css={this.style}>{locationsCollection}</ul>
-    )
+    return <ul css={this.style}>{locationsCollection}</ul>
   }
 }
-
 
 class Location extends React.Component {
   constructor(props) {
@@ -82,10 +83,11 @@ class Location extends React.Component {
   render() {
     return (
       <div>
-        <input type='checkbox'
-               id={this.props.id}
-               checked={this.props.checked}
-               onChange={this.handlerCheckboxChange}
+        <input
+          type="checkbox"
+          id={this.props.id}
+          checked={this.props.checked}
+          onChange={this.handlerCheckboxChange}
         />
         <i className={'flag flag-' + this.props.flag} />
         <li css={this.style}>{this.props.name}</li>

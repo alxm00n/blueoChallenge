@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import React from 'react';
-import './assets/icons/icons.css';
+import { css, jsx } from '@emotion/core'
+import React from 'react'
+import './assets/icons/icons.css'
 
 export default class Glyph extends React.Component {
   constructor(props) {
@@ -27,10 +27,6 @@ export default class Glyph extends React.Component {
 
   render() {
     this.style = this.buildStyle()
-    return (
-      <i className='icon'
-         css={this.style}
-         onClick={this.handlerClick}  />
-    )
+    return <i className="icon" css={this.style} onClick={this.handlerClick} />
   }
 }

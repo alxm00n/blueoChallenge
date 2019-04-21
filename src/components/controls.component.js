@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import React from 'react';
-import Glyph from './glyph.component.js';
+import { css, jsx } from '@emotion/core'
+import React from 'react'
+import Glyph from './glyph.component.js'
 
 class FilterBox extends React.Component {
   constructor(props) {
@@ -19,12 +19,9 @@ class FilterBox extends React.Component {
       border: none;
       padding-left: 3em;
       background-color: #ffffff;
-      -webkit-box-shadow:
-        inset 0px 4px 5px rgba(0,0,0,0.2);
-      -moz-box-shadow:
-        inset 0px 4px 5px rgba(0,0,0,0.2);
-      box-shadow:
-        inset 0px 4px 5px rgba(0,0,0,0.2);
+      -webkit-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.2);
     `
   }
 
@@ -35,18 +32,24 @@ class FilterBox extends React.Component {
   render() {
     return (
       <>
-        <Glyph content={'\\e986'} size={'1.6em'} color={'#5b9ef5'}
-              addStyle={`
+        <Glyph
+          content={'\\e986'}
+          size={'1.6em'}
+          color={'#5b9ef5'}
+          addStyle={`
                   position: absolute;
                   top: 3.2em;
                   left: 1.2em;
-                `} />
+                `}
+        />
         <form>
-          <input type='text'
-                 placeholder='Filter Locations'
-                 value={this.props.filterString}
-                 onChange={this.handlerFilterStringChange}
-                 css={this.style}/>
+          <input
+            type="text"
+            placeholder="Filter Locations"
+            value={this.props.filterString}
+            onChange={this.handlerFilterStringChange}
+            css={this.style}
+          />
         </form>
       </>
     )
@@ -65,10 +68,19 @@ class ClearButton extends React.Component {
 
   render() {
     return (
-      <a css={css`color: #5b9ef5; cursor: pointer;`}
-         onClick={this.handlerClearCLick}>
-        <Glyph content={'\\ea0f'} size={'0.8em'} color={'#5b9ef5'}
-              addStyle={`margin-right: 0.5em;`}/>
+      <a
+        css={css`
+          color: #5b9ef5;
+          cursor: pointer;
+        `}
+        onClick={this.handlerClearCLick}
+      >
+        <Glyph
+          content={'\\ea0f'}
+          size={'0.8em'}
+          color={'#5b9ef5'}
+          addStyle={'margin-right: 0.5em;'}
+        />
         Clear All
       </a>
     )

@@ -1,5 +1,6 @@
 {
-  "locations": [{
+  "locations": [
+    {
       "locationID": 1001,
       "enabled": false,
       "name": "Queretaro",

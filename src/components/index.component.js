@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import styled from '@emotion/styled';
-import React from 'react';
-import './assets/flags/flags.css';
+import { css, jsx } from '@emotion/core'
+import React from 'react'
+import './assets/flags/flags.css'
 
 export default class LocationsIndex extends React.Component {
   constructor(props) {
@@ -35,25 +34,27 @@ export default class LocationsIndex extends React.Component {
     let locationsIndex = []
     let firstChar = null
 
-    this.props.locations.forEach( (location, index) => {
+    this.props.locations.forEach(location => {
       let name = location.locationName.toLowerCase()
-      if( name.indexOf(filterString) === -1) { return; }
+      if (name.indexOf(filterString) === -1) {
+        return
+      }
       let currentFirstChar = name[0].toUpperCase()
-      if( currentFirstChar !== firstChar ) {
+      if (currentFirstChar !== firstChar) {
         firstChar = currentFirstChar
-        locationsIndex.push(<Index key={'i'+location.locationID}
-                                        id={location.locationID}
-                                        text={firstChar}
-                                        onIndexClick={this.handlerIndexClick}
-                                        />)
+        locationsIndex.push(
+          <Index
+            key={'i' + location.locationID}
+            id={location.locationID}
+            text={firstChar}
+            onIndexClick={this.handlerIndexClick}
+          />
+        )
       }
     })
-    return (
-      <div css={this.style}>{locationsIndex}</div>
-    )
+    return <div css={this.style}>{locationsIndex}</div>
   }
 }
-
 
 class Index extends React.Component {
   constructor(props) {
@@ -70,9 +71,9 @@ class Index extends React.Component {
 
   render() {
     return (
-      <a data-loc={this.props.id}
-         onClick={this.handlerIndexClick}
-      >{this.props.text}</a>
+      <a data-loc={this.props.id} onClick={this.handlerIndexClick}>
+        {this.props.text}
+      </a>
     )
   }
 }

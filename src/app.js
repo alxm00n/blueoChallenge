@@ -1,13 +1,12 @@
-'use strict';
+'use strict'
 /** @jsx jsx */
-import { Global, css, jsx } from '@emotion/core';
-import styled from '@emotion/styled';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Collapse from 'react-bootstrap/Collapse';
-import LocationsService from './components/locations.service.js';
+import { Global, css, jsx } from '@emotion/core'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Collapse from 'react-bootstrap/Collapse'
+import LocationsService from './components/locations.service.js'
 import LocationsComponent from './components/locations.component.js'
-import TitleBar from './components/titlebar.component.js';
+import TitleBar from './components/titlebar.component.js'
 
 export default class App {
   constructor(el) {
@@ -15,21 +14,20 @@ export default class App {
   }
 
   init() {
-    const LOCATIONS_URL = `http://localhost:3000/locations` // test url
+    const LOCATIONS_URL = 'http://localhost:4000/locations' // test url
 
     let service = new LocationsService(LOCATIONS_URL)
     let locations = service.getLocations()
-    locations.then( data => { this.startLocationComponent(data) } )
-             .catch(error => console.log(`Locations request failed: ${error.message}`))
-
+    locations
+      .then(data => {
+        this.startLocationComponent(data)
+      })
+      .catch(error => console.log(`Locations request failed: ${error.message}`))
   }
 
   startLocationComponent(data) {
-    ReactDOM.render(
-      <LocationsComponentWrap locations={data} />
-    ,this.el)
+    ReactDOM.render(<LocationsComponentWrap locations={data} />, this.el)
   }
-
 }
 
 class LocationsComponentWrap extends React.Component {
@@ -46,7 +44,9 @@ class LocationsComponentWrap extends React.Component {
 
   buildGlobalStyle() {
     return css`
-      html { font-size: 12px; }
+      html {
+        font-size: 12px;
+      }
     `
   }
 
@@ -62,7 +62,7 @@ class LocationsComponentWrap extends React.Component {
       color: #585757;
     `
     if (this.state.minimized) {
-      style+= `
+      style += `
         top: 9em;
         left: -9em;
         transform: rotate(270deg);
@@ -71,14 +71,14 @@ class LocationsComponentWrap extends React.Component {
     return css(style)
   }
 
-  handlerCollapse(e) {
+  handlerCollapse() {
     this.setState({
       open: !this.state.open
     })
   }
 
-  handlerMinimize(e) {
-    this.setState( state => {
+  handlerMinimize() {
+    this.setState(state => {
       const open = !state.minimized ? false : true
       return {
         open: open,
@@ -92,20 +92,20 @@ class LocationsComponentWrap extends React.Component {
     return (
       <div css={this.style}>
         <Global styles={this.globalStyle} />
-        <TitleBar isOpen={this.state.open}
-                  isMinimized={this.state.minimized}
-                  onCollapseClick={this.handlerCollapse}
-                  onMinimizeClick={this.handlerMinimize}
+        <TitleBar
+          isOpen={this.state.open}
+          isMinimized={this.state.minimized}
+          onCollapseClick={this.handlerCollapse}
+          onMinimizeClick={this.handlerMinimize}
         />
         <Collapse in={this.state.open}>
           <div>
-            {this.state.open &&
-              <LocationsComponent data={this.props.locations}/>
-            }
+            {this.state.open && (
+              <LocationsComponent data={this.props.locations} />
+            )}
           </div>
         </Collapse>
       </div>
     )
   }
-
 }

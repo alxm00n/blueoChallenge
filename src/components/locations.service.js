@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 export default class LocationsService {
   constructor(url = this.isRequired`url`, options = {}) {
@@ -10,7 +10,7 @@ export default class LocationsService {
     let tempLocations = this.fetchData(this.url, this.options)
     let locations = new LocationsCollection()
     return tempLocations.then(json => {
-      json.forEach((location, index) => {
+      json.forEach(location => {
         locations.push(new LocationModel(location))
       })
       locations.sortAlphabeticallyBy('locationName')
@@ -21,10 +21,12 @@ export default class LocationsService {
   fetchData(url, options) {
     return fetch(url, options)
       .then(response => {
-        if(response.ok) {
+        if (response.ok) {
           return Promise.resolve(response)
         } else {
-          return Promise.reject(new Error(`${response.status}: ${response.statusText}`))
+          return Promise.reject(
+            new Error(`${response.status}: ${response.statusText}`)
+          )
         }
       })
       .then(response => response.json())
@@ -33,11 +35,15 @@ export default class LocationsService {
   isRequired(param) {
     throw new Error(`${param} is required.`)
   }
-
 }
 
 class LocationModel {
-  constructor({ locationID, enabled, city: { name: city }, country: { name: country, abbreviation: abbr } }) {
+  constructor({
+    locationID,
+    enabled,
+    city: { name: city },
+    country: { name: country, abbreviation: abbr }
+  }) {
     this.locationID = locationID
     this.selected = enabled || false
     this.city = city ? city : 'Not Provided'
@@ -49,7 +55,6 @@ class LocationModel {
   getFlagID(abbr) {
     return abbr ? abbr.toLowerCase() : null
   }
-
 }
 
 class LocationsCollection extends Array {
@@ -59,9 +64,8 @@ class LocationsCollection extends Array {
 
   sortAlphabeticallyBy(key = this.isRequired`key`) {
     this.sort((a, b) => {
-      return a[key] < b[key] ? -1
-           : a[key] > b[key] ? 1
-           : 0 })
+      return a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0
+    })
   }
 
   isRequired(param) {

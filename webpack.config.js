@@ -6,12 +6,10 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 const config = {
   mode: devMode ? 'development' : 'production',
-  context: path.resolve(__dirname, 'src'),
-  entry: {
-    app: './index.js'
-  },
+  context: path.resolve(__dirname, './src'),
+  entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: './assets/js/[name].bundle.js'
   },
   module: {
@@ -38,7 +36,8 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './assets/media/'
+              outputPath: './assets/media/',
+              publicPath: '../media'
             }
           }
         ]
@@ -50,15 +49,12 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './assets/fonts/'
+              outputPath: './assets/fonts/',
+              publicPath: '../fonts'
             }
           }
         ]
       },
-      // {
-      //   test: /\.(sa|sc|c)ss$/,
-      //   use: ['style-loader', 'css-loader']
-      // }
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -82,7 +78,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: './index.html'
     }),
     new MiniCssExtractPlugin({
       filename: devMode
@@ -94,15 +90,14 @@ const config = {
     })
   ],
   devServer: {
-    index: 'index.html',
-    contentBase: path.resolve(__dirname, 'dist'),
+    index: './index.html',
+    // contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
-    port: 9000,
-    stats: 'normal',
+    // port: 9000,
     open: 'chrome',
     writeToDisk: true
   },
-  devtool: 'source-map'
+  devtool: 'inline-source-map'
 }
 
 module.exports = config

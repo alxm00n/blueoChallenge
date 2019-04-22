@@ -7,10 +7,10 @@
     "graph": "git log --all --decorate --oneline --graph",
     "clean": "rimraf ./dist*",
     "serve": "babel-node ./src/backend/server.js",
-    "serve:json": "json-server --watch --delay 2000 --port 4000 ./src/backend/db.json",
+    "serve:json": "json-server --watch --delay 2000 --port 4000 ./src/services/db.json",
     "build:dev": "webpack --mode=development --debug --progress",
     "build:prod": "set NODE_ENV=production && webpack --mode=production",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",

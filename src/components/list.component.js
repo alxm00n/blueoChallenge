@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import './assets/flags/flags.css'
+import '../assets/css/flags.css'
 
 export default class LocationsList extends React.Component {
   constructor(props) {

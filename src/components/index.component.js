@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import './assets/flags/flags.css'
 
 export default class LocationsIndex extends React.Component {
   constructor(props) {

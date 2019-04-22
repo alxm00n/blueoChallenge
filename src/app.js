@@ -4,7 +4,7 @@ import { Global, css, jsx } from '@emotion/core'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Collapse from 'react-bootstrap/Collapse'
-import LocationsService from './components/locations.service.js'
+import LocationsService from './services/locations.service.js'
 import LocationsComponent from './components/locations.component.js'
 import TitleBar from './components/titlebar.component.js'
 

@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import React from 'react'
-import './assets/icons/icons.css'
+import '../assets/css/icons.css'
 
 export default class Glyph extends React.Component {
   constructor(props) {

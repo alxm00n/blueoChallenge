@@ -22,5 +22,6 @@
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "single"],
     "no-console": "warn"
-  }
+  },
+  "root": true
 }

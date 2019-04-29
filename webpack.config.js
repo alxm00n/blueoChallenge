@@ -17,13 +17,27 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        include: path.resolve(__dirname, 'src'),
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+        include: path.resolve(__dirname, './src'),
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: [
+                [
+                  'emotion',
+                  {
+                    sourceMap: devMode,
+                    autoLabel: devMode,
+                    labelFormat: '[local]',
+                    cssPropOptimization: true
+                  }
+                ]
+              ]
+            }
+          },
+          'eslint-loader'
+        ]
       },
       {
         test: /\.html$/,
@@ -61,14 +75,14 @@ const config = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development'
+              hmr: devMode
             }
           },
           {
             loader: 'css-loader',
             options: {
               url: true,
-              sourceMap: process.env.NODE_ENV === 'development'
+              sourceMap: devMode
             }
           }
         ]

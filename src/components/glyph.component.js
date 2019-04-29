@@ -1,32 +1,37 @@
 'use strict'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 import '../assets/css/icons.css'
+import PropTypes from 'prop-types'
 
-export default class Glyph extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handlerClick = this.handlerClick.bind(this)
+function Glyph(props) {
+  const { color, size, content, addStyle, onClick } = props
+
+  const handleClick = e => {
+    e.preventDefault()
+    onClick(e)
   }
 
-  handlerClick(e) {
-    this.props.onClick(e)
-  }
-
-  buildStyle() {
+  const buildStyle = () => {
     return css`
-      color: ${this.props.color};
-      font-size: ${this.props.size};
+      color: ${color};
+      font-size: ${size};
       &::before {
-        content: "${this.props.content}";
+       content: "${content}";
       }
-      ${this.props.addStyle}
+      ${addStyle}
     `
   }
 
-  render() {
-    this.style = this.buildStyle()
-    return <i className="icon" css={this.style} onClick={this.handlerClick} />
-  }
+  return <i className="icon" css={buildStyle()} onClick={handleClick} />
 }
+
+Glyph.propTypes = {
+  color: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  addStyle: PropTypes.string,
+  onClick: PropTypes.func
+}
+
+export default Glyph
